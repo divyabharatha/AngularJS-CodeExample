@@ -1,0 +1,18 @@
+/**
+  * Autore : Aleandri Enrico
+  * Data : 26 Gennaio 2015
+  * Argomento : AngularJS
+  *
+ **/
+
+
+ In questo esercizio usiamo i filtri per fare una semplicissima ricerca di valori in una lista.
+ Nel modulo "FilterInControllerModule" creiamo il controller "FilterController" al cui interno creiamo una funzione "filtra"
+ che invocheremo ad ogni cambiamento della nostra barra di ricerca al cui inteno viene invocato il filtro "filterFilter"
+ di cui abbiamo fatto la dependency Injection, questo filtro, dato un array in ingresso e una query di filtro, ci restituisce
+ un array contenente tutti gli elementi che contengono la query di ricerca. A questo punto usando l'ng-repeat stampiamo
+ tutti gli elementi di "filteredArray" e sulla pagina gli associamo un'altro filtro di ordinamento "orderBy:'name'".
+
+
+  N.B. i filtri possono essere anche applicati in pagina direttamente con il |  facendo ad esempio
+  "array | query | orderBy:'name'"

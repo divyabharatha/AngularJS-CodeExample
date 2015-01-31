@@ -1,0 +1,30 @@
+<!doctype html>
+<html ng-app="FilterInControllerModule">
+	<head>
+		<script src="js/angular.js"></script>
+        <script src="js/controller/app.js" ></script>
+	</head>
+	<body>
+
+		<br/>
+        <div ng-controller="FilterController">
+
+            <div>
+                Filtro
+                <input ng-model="query" type="text" size="10" ng-change="filtra()" placeholder="Cerca"/>
+            </div>
+            <br/>
+            <div>
+                All entries:
+                <br/>
+                <span ng-repeat="entry in array | orderBy:'name'">{{entry.name}} <br></span>
+            </div>
+            <br/>
+            <div>
+                Entries that contain an "{{query}}":
+                <br/>
+                <span ng-repeat="entry in filteredArray | orderBy:'name'"> {{entry.name}} <br></span>
+            </div>
+        </div>
+	</body>
+</html>

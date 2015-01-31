@@ -1,0 +1,18 @@
+/**
+  * Autore : Aleandri Enrico
+  * Data : 26 Gennaio 2015
+  * Argomento : AngularJS
+  *
+ **/
+
+
+ In questo esempio vediamo cone creare due semplici servizi tramite la factory().
+ Per dare visibilità dei diversi scope che possiamo avere ho creato un servizio "generateNumber" ( nel file NumberService.js)
+ aggiungendolo allo scope del controller, quindi nel modulo invoice, mentre il servizio "generateString" l'ho creato
+ aggiungendolo ad un'altro modulo "generator". Questo a livello applicativo comporta due differenze, da un lato,
+ nel caso del "generateNumber" non ho bisogno di esplicitare alcuna dipendenza del modulo "invoice" dato che sia il controller
+ che il servizio sono nello stesso scope, invece per il "generateString" ho dovuto specificare che il modulo "invoice" è
+ dipendente dal modulo "generator", da cui recupero il servizio da invocare.
+
+ Ricordate inoltre che i servizi invocati sono singletone quindi se vogliamo fare in modo che ad ogni accesso al servizio
+ noi abbiamo un valore diverso, dobbiamo mettere una funzione di callback nell'oggetto di ritorno.

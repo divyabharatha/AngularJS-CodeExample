@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html ng-app="exampleApp">
+<head>
+    <title>Forms</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link  rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" />
+    <script src="https://code.angularjs.org/1.3.6/angular.js"></script>
+    <script src="js/service/TaskService.js"></script>
+    <script src="js/controller/app.js"></script>
+
+</head>
+
+<body>
+<div id="todoPanel" class="panel" ng-controller="defaultCtrl">
+
+    <div style="width: 50%; margin-left:25%;text-align: center;">
+        <div style="width: 400px; font-size: 19px;height: 50px;">
+            <span style="width: 200px;display: block;float: right;"> Enrico's ToDoList </span>
+            <span ng-class="(todos | filter:false).length > 4 ? 'red' : 'green'" style="border-radius: 3px; width: 40px; height:40px;display: block;float: right;">{{(todos | filter:false).length}}</span>
+        </div>
+        <div style="width:400px;">
+            <input ng-model="newItem"  style="width:250px;">
+            <button class="btn btn-success" ng-click="addAction(newItem)">Add</button>
+            <button class="btn btn-success" ng-click="updateTasks()">Update</button>
+        </div>
+        <div>
+            <table border="0" width="400">
+                <tr>
+                    <td>
+                        <b>#</b>
+                    </td>
+                    <td>
+                        <b>Description</b>
+                    </td>
+                    <td>
+                        <b>Done</b>
+                    </td>
+                </tr>
+                <tr ng-repeat="item in todos | filter:false"   >
+                    <td>
+                        {{$index+1}}
+                    <td>
+                        <div ng-bind="item.action"></div>
+                    </td>
+                    <td>
+                        <input type="checkbox" ng-model="item.complete" />
+                    </td>
+                </tr>
+                <tr ng-if="(todos | filter:false).length == 0">
+                    <td colspan="2">
+                        NO TASK
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+</body>
+</html>

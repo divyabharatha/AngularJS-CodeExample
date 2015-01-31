@@ -1,0 +1,24 @@
+<!doctype html>
+<html ng-app="name">
+	<head>
+        <script data-main="scripts/main" src="scripts/require.js"></script>
+		<script src="js/angular.js"></script>
+        <script src="js/controller/app.js" ></script>
+
+	</head>
+	<body>
+
+		<br/>
+		<div ng-controller="creaAppellativo">
+		
+		  L'appellativo di
+		  <input type="text"  ng-change="doAppellativo()" value="Enrico" ng-model="name" />
+
+          <input type="text"  ng-change="doAppellativo()" value="Aleandri" ng-model="surname" />
+		  &egrave;
+            <span ng-bind="appellativo"></span>
+<br/>
+             è Mrs./Mrss. {{name + surname}}
+		</div>
+	</body>
+</html>

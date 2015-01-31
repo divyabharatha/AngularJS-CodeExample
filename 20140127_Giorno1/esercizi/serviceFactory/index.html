@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Example - example-guide-concepts-21-production</title>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.0-beta.1/angular.min.js"></script>
+    <script src="js/controller/invoice.js"></script>
+    <script src="js/service/NumberService.js"></script>
+    <script src="js/service/StringService.js"></script>
+</head>
+
+<body>
+<div ng-app="invoice" ng-controller="InvoiceController as invoice">
+    <b>Generatore casuale:</b>
+    <div>
+        <span>
+        Stringa:
+        </span>
+        <span ng-bind="invoice.randomString"></span>
+    </div>
+    <div>
+        <span>
+        Numero:
+        </span>
+        <span ng-bind="invoice.randomNumber"></span>
+    </div>
+    <div>
+        <button class="btn" ng-click="invoice.generateS()">Genera Stringa</button>
+        <button class="btn" ng-click="invoice.generateN()">Genera Numero</button>
+    </div>
+    <div>
+        STRINGA FISSA :
+        <span ng-bind="invoice.staticString"></span>
+    </div>
+</div>
+</body>
+
+</html>

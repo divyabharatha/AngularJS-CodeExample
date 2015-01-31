@@ -1,0 +1,25 @@
+<!doctype html>
+<html ng-app>
+<!-- Photo credit: Alan Cleaver (http://www.flickr.com/photos/alancleaver/sets/72157606825074174/with/4439276736/) -->
+	<head>
+		<!--script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.2/angular.min.js"></script-->
+			
+		<link rel="stylesheet" href="css/app.css">
+		
+		<script src="js/angular.js"></script>
+		<script src="js/app.js"></script>
+	</head>
+	<body ng-controller="PhotoListCtrl">
+	
+		Cerca: <input ng-model="query"> <!--  stringa di filtraggio -->
+		<br/><br/>
+		<ul>
+		  <li ng-repeat="photo in photos | filter:query | orderBy:'description'"> <!-- questo applica all'iterazione di photos un filtro con | come in linux -->
+			<p>
+			<img ng-src="photos/thumb/{{photo.file}}" width="{{photo.width}}" alt="{{photo.description}}" />
+			{{photo.description}}
+			</p>
+		  </li>
+		</ul>
+	</body>
+</html>

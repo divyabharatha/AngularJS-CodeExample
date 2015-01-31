@@ -1,0 +1,19 @@
+/**
+  * Autore : Aleandri Enrico
+  * Data : 26 Gennaio 2015
+  * Argomento : AngularJS
+  *
+ **/
+
+ Il seguente esempio  mette in evidenza come viene gestita i Service in caso di multi dipendenza.
+
+ Nel caso del modulo finance2 che dipende dal modulo finance3 abbiamo all'interno due servizi chiamati con lo stesso nome
+ "currencyConverter" quando andiamo a fare la dependency injection del modulo finance2 all'interno del controller
+ "InvoiceController" all'interno del modulo "invoice" e andiamo ad invocare il servizio "currencyConverter" possiamo notare
+ come viene eseguito il servizio subito disponibile nello scope del modulo finance2. Nel caso non fosse stato presente nel
+ modulo finance2 il servizio "currencyConverter" Angular avrebbe cercato nello scope superiore quindi andando nella dipendenza
+ dal modulo finance3, come possiamo vedere con il servizio doString che nel cabledString è stato rienominato come doStringDIVERSO
+ e nel momento in cui andiamo a cercare il servizio doString dentro il cabledString Angular non trovando niente va a cercarlo
+ dentro il modulo cabledString2.
+
+
